@@ -1,0 +1,100 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Bike Comparator</title>
+	<meta name="description" content="The HTML5 Herald">
+	<meta name="author" content="SitePoint">
+
+	<link rel="stylesheet" href="css/styles.css?v=1.0">
+
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		.footer {
+			left: 0;
+			bottom: 0;
+			height: 5%;
+			width: 100%;
+			background-color: grey;
+			color: white;
+		}
+		.column {
+			float: left;
+			width: 50%;
+			padding: 10px;
+		}
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		a {
+	     text-decoration: none;
+	    }
+	</style>
+
+</head>
+
+<body>
+
+	<div class="row">
+		<div class="column">
+			<h1>{{ bike.brand }} {{ bike.model }}</h1>
+			<p>Sizes: {% for size in bike.sizes %}
+				{{ size }}
+			{% endfor %}</p>
+			<p>Colors: {% for color in bike.colors %}
+				{{ color }}
+			{% endfor %}</p>
+			
+			<p><h4>Frame and Suspension</h4></p>
+			<p>Frame: {{ bike.frame }}</p>
+			<p>Fork: {{ bike.fork }}</p>
+			<p>Rear Shock: {{ bike.rearShock }}</p>
+
+			<p><h4>Cockpit</h4></p>
+			<p>Stem: {{ bike.stem }}</p>
+			<p>Handlebar: {{ bike.handlebar }}</p>
+
+			<p><h4>Seat</h4></p>
+			<p>Seatpost: {{ bike.seatpost }}</p>
+			<p>Saddle: {{ bike.saddle }}</p>
+
+			<p><h4>Brakes</h4></p>
+			<p>Brakes: {{ bike.brakes }}</p>
+			<p>Brake Levers: {{ bike.brakelevers }}</p>
+			
+			<p><h4>Shifters and Derailleurs</h4></p>
+			<p>Shifter: {{ bike.shifter }}</p>
+			<p>Front Derailleur: {{ bike.frontDerailleur }}</p>
+			<p>Rear Derailleur: {{ bike.rearDerailleur }}</p>
+
+			<p><h4>Drivetrain</h4></p>
+			<p>Cassette: {{ bike.cassette }}</p>
+			<p>Chain: {{ bike.chain }}</p>
+			<p>Crank: {{ bike.crank }}</p>
+			<p>Bottom Bracket: {{ bike.bottomBracket }}</p>
+
+			<p><h4>Wheels and Tires</h4></p>
+			<p>Wheels: {{ bike.wheels }}</p>
+			<p>Hubs: {{ bike.hubs }}</p>
+			<p>Spokes: {{ bike.spokes }}</p>
+			<p>Rims: {{ bike.rims }}</p>
+			<p>Tires: {{ bike.tires }}</p>
+		</div>
+		<div class="column">
+			<img src="/bike/image/Giant!Glory_1" style="width: 100%">
+			<h4>{{ bike.price }}€</h4>
+			<button type="button">Add to Comparison</button> 
+		</div>
+	</div>
+	
+	<div class="footer">
+		<p><div style="text-align: right; padding-right: 2%;">Made by <a href="https://github.com/Karkanius">Paulo Vasconcelos</a></div>
+	</div>
+</body>
+</html>
